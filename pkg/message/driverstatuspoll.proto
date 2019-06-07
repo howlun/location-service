@@ -1,0 +1,21 @@
+syntax = "proto3";
+package message;
+
+message DriverStatusPoll {
+    string fleet = 1;
+    int32 driverId = 2;
+    int32 providerId = 3;
+    float lat = 4;
+    float lng = 5;
+
+    enum DriverStatus {
+        NOTAVAILABLE = 0;
+        AVAILABLE = 1;
+        BUSY = 2;
+    }
+
+    DriverStatus status = 6;
+    int64 jobId = 7;
+
+    int64 timestamp = 8;
+}

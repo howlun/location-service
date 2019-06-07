@@ -1,0 +1,43 @@
+corsconfig:
+  allowedorigins:
+    - "*"
+  allowedmethods:
+    - "POST"
+    - "GET"
+    - "PUT"
+    - "DELETE"
+  allowedheaders:
+    - "Accept"
+    - "Content-Type"
+    - "Content-Length"
+    - "Accept-Encoding"
+    - "X-CSRF-Token"
+    - "Authorization"
+    - "Origin"
+    - "X-Requested-With"
+  allowcredentials: true
+  debug: true
+  optionspassthrough: false
+  maxage: 3600
+udpserver:
+  addr: ":9000"
+httpserver:
+  addr: ":8000"
+locationremoteserver:
+  remoteaddr: "35.187.243.177:9851" #"35.185.186.230:9851"
+  hookendpoints:
+    #- "kafka://35.237.203.189:9092"
+    #- "kafka://35.240.167.230:9092"
+    - "kafka://34.73.77.212:9092"
+  searchtier1meter: 1000
+  searchtier2meter: 5000
+  searchtier3meter: 0
+  detectarrivingmeter: 500
+  detectarrivedmeter: 50
+authserver:
+  remoteaddr: "35.187.243.177:8080"
+fleetserver:
+  remoteaddr: "https://rsaprovider.tk/fleet/api"
+  #remoteaddr: "http://35.187.243.177/fleet/api"
+socketserver:
+  addr: ":8010"

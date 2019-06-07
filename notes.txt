@@ -1,0 +1,42 @@
+Required Vendor Packages
+github.com/golang/dep/cmd/dep       # Dependency Management
+github.com/gorilla/mux              # API Router
+github.com/gomodule/redigo/redis    # Redis Client
+github.com/golang/protobuf/proto    # Protobuf Library
+github.com/golang/protobuf/ptypes   # Protobuf Extended Library
+github.com/mitch-strong/keycloakgo  # KeyCloak Adapter
+github.com/parnurzeal/gorequest # Http Request library
+
+Unique ID library
+"github.com/chilts/sid"
+"github.com/kjk/betterguid"
+"github.com/oklog/ulid"
+"github.com/rs/xid"
+"github.com/satori/go.uuid"
+"github.com/segmentio/ksuid"
+"github.com/sony/sonyflake"
+
+Installation
+mkdir ~/go/src/github.com/iknowhtml/locationtracker
+cd /tmp
+git clone https://tc-systems.visualstudio.com/RSA-Provider_app/RSA-Provider_app%20Team/_git/Fleet-Location
+cd /Fleet-Location
+cp -v -r * ~/go/src/github.com/iknowhtml/locationtracker
+go build
+
+Protoc Command
+protoc --go_out=. *.proto
+
+PAT
+ffzcefajt53fdfko2nfxqzxtlo3gewkmazcsevsijtjkdnz53tbq
+
+Client Command
+Test sending driver status: go run main.go -m client -c 5 -p 35.185.186.230:9000
+
+Server Command
+Run UDP server: go run main.go -m udp -p :9000
+Run HTTP server: go run main.go -m http -p :8000
+
+Read log from Syslog:
+sudo journalctl -n 100 -u locationtracker-udp
+sudo journalctl -n 100 -u locationtracker-http

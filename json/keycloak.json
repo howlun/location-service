@@ -1,0 +1,12 @@
+{
+    "realm": "master",
+    "auth-server-url": "http://35.240.167.230/auth",
+    "ssl-required": "none",
+    "resource": "admin-cli",
+    "credentials": {
+      "secret": "db9ef694-0b66-48a8-a297-e106e0ee04c4"
+    },
+    "use-resource-role-mappings": true,
+    "confidential-port": 0,
+    "policy-enforcer": {}
+  }

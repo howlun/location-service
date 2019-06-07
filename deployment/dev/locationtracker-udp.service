@@ -1,0 +1,23 @@
+[Unit]
+Description=Location Tracker UDP Server
+ConditionPathExists=/home/rsa-key-20190103/go/src/github.com/iknowhtml/locationtracker
+After=network.target
+ 
+[Service]
+Type=simple
+User=root
+Group=root
+LimitNOFILE=1024
+
+Restart=on-failure
+RestartSec=10
+
+WorkingDirectory=/home/rsa-key-20190103/go/src/github.com/iknowhtml/locationtracker
+ExecStart=/usr/bin/sudo /home/rsa-key-20190103/go/src/github.com/iknowhtml/locationtracker/locationtracker -m udp
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=locationtracker-udp
+
+[Install]
+WantedBy=multi-user.target
